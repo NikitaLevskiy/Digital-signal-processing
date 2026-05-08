@@ -1,6 +1,6 @@
 # CIC filters portfolio
 ## CIC filters the most important math equations
-![CIC filter equations](https://drive.google.com/file/d/1TNq8d2Po4YydRcrYLm4tYBYOovxTl2fl/view?usp=drive_link)
+![CIC filter equations](images/cic%20filter%20equation.png)
 ## CIC decimator and CIC interpolator circuit
 ## CIC decimator order and isolation
 ## CIC decimator differential delay
