@@ -2,6 +2,7 @@
 ## CIC filter the most important math equations
 ![CIC filter equations](images/cic%20filter%20equation.png)
 ## CIC decimator and CIC interpolator circuit
+![CIC filter circuits](images/cic%20filter%20circuit.png)
 ## CIC decimator order and isolation
 This example shows how isolation changes with order of the filter (the higher order the better isolation). Order of the filter N = 1, 2, 3, 4, 5; decimation factor R = 5, differential delay M = 1 and sampling frequency fs = 1000.
 ![CIC decimation filter different order](images/cic%20decimation%20filter%20different%20order.png)
