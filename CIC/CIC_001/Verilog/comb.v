@@ -13,7 +13,7 @@ module comb
 	 reg signed [DATA_WIDTH-1:0] data_i_ff [M-1:0];
 
 
-	assign adder = data_i - data_i_ff[M-1:0];
+	assign adder = data_i - data_i_ff[M-1];
 
 
 	genvar i;

@@ -4,8 +4,10 @@ module cic_decimator
 	          N = 7,
 			  M = 1
 )(
-	 input wire                         rst_i,
-	 input wire                         clk_i,
+	 input wire                         rst_i_i,
+	 input wire                         rst_o_i,
+	 input wire                         clk_i_i,
+	 input wire                         clk_o_i,
 	 input wire signed [DATA_WIDTH-1:0] data_i,
 	output wire signed [DATA_WIDTH-1:0] data_o
 );
@@ -27,8 +29,8 @@ module cic_decimator
 					.DATA_WIDTH(DATA_WIDTH),
 					.M(M)
 				) integrator_inst (
-					.rst_i(rst_i),
-					.clk_i(clk_i),
+					.rst_i(rst_i_i),
+					.clk_i(clk_i_i),
 					.data_i(data_i),
 					.data_o(integrator[i])
 				);
@@ -39,8 +41,8 @@ module cic_decimator
 					.DATA_WIDTH(DATA_WIDTH),
 					.M(M)
 				) integrator_inst (
-					.rst_i(rst_i),
-					.clk_i(clk_i),
+					.rst_i(rst_i_i),
+					.clk_i(clk_i_i),
 					.data_i(integrator[i-1]),
 					.data_o(integrator[i])
 				);
@@ -57,6 +59,8 @@ module cic_decimator
 			.DATA_WIDTH(DATA_WIDTH),
 			.ORDER(SYNCH_ORDER)
 		) synchronizer_inst (
+			.rst_i(rst_o_i),
+			.clk_i(clk_o_i),
 			.data_i(synch_input),
 			.data_o(synch_output)
 		);
@@ -72,8 +76,8 @@ module cic_decimator
 					.DATA_WIDTH(DATA_WIDTH),
 					.M(M)
 				) comb_inst (
-					.rst_i(rst_i),
-					.clk_i(clk_i),
+					.rst_i(rst_o_i),
+					.clk_i(clk_o_i),
 					.data_i(synch_output),
 					.data_o(comb[i])
 				);
@@ -84,8 +88,8 @@ module cic_decimator
 					.DATA_WIDTH(DATA_WIDTH),
 					.M(M)
 				) comb_inst (
-					.rst_i(rst_i),
-					.clk_i(clk_i),
+					.rst_i(rst_o_i),
+					.clk_i(clk_o_i),
 					.data_i(comb[i-1]),
 					.data_o(comb[i])
 				);
