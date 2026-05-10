@@ -3,14 +3,14 @@ module integrator
 	parameter DATA_WIDTH = 1,
 	          M = 1
 )(
-	 input wire                  rst_i,
-	 input wire                  clk_i,
-	 input wire [DATA_WIDTH-1:0] data_i,
-	output wire [DATA_WIDTH-1:0] data_o
+	 input wire                         rst_i,
+	 input wire                         clk_i,
+	 input wire signed [DATA_WIDTH-1:0] data_i,
+	output wire signed [DATA_WIDTH-1:0] data_o
 );
 
-	wire [DATA_WIDTH-1:0] adder;
-	 reg [DATA_WIDTH-1:0] adder_ff [M-1:0];
+	wire signed [DATA_WIDTH-1:0] adder;
+	 reg signed [DATA_WIDTH-1:0] adder_ff [M-1:0];
 	
 	
 	assign adder = data_i + data_o;
