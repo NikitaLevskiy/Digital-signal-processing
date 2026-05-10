@@ -3,17 +3,17 @@ module synchronizer
 	parameter DATA_WIDTH = 1,
 	          ORDER = 2
 )(
-	 input wire                  rst_i,
-	 input wire                  clk_i,
-	 input wire [DATA_WIDTH-1:0] data_i,
-	output wire [DATA_WIDTH-1:0] data_o
+	 input wire                         rst_i,
+	 input wire                         clk_i,
+	 input wire signed [DATA_WIDTH-1:0] data_i,
+	output wire signed [DATA_WIDTH-1:0] data_o
 );
 
 	genvar i;
 	
-	generate0
+	generate
 	
-		reg [DATA_WIDTH-1:0] synch [ORDER-1:0];
+		reg signed [DATA_WIDTH-1:0] synch [ORDER-1:0];
 	
 		for (i = 0; i < ORDER; i = i + 1) begin
 		
