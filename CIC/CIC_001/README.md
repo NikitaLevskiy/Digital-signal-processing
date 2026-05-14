@@ -17,4 +17,4 @@ For testing 12-bit signed sin wave generator was used. Generator connected direc
 ![Test circuit](images/test%20circuit.png)
 ![Waveforms](images/test%20waveforms.png)
 ## Notes
-To ensure isolation level more than 60 dB I choose filter order N = 7 and differential delay M = 1. For design of FIR compensation filter frequency sampling method was used. Filter data width B = 30.
+To ensure isolation level more than 60 dB I choose filter order N = 7 and differential delay M = 1. For design of FIR compensation filter frequency sampling method was used. Filter data width B = 29.
