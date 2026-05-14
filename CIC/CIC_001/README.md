@@ -9,6 +9,7 @@ fs/R = 200 kHz\
 Out of band attenuation > 60 dB\
 Input data width Bx = 12
 ## CIC filter circuit
+![CIC filter circuit](images/cic%20filter%20circuit.png)
 ## CIC filter simulation
 ![CIC filter](images/cic%20filter.png)
 ![CIC compensation filter](images/cic%20compensation%20filter.png)
